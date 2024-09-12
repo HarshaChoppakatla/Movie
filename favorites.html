@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Movies</title>
+</head>
+<body>
+    <h1>Your Favorite Movies</h1>
+    <ul id="favorites-list"></ul>
+    <a href="sample.html">Go back to Movie List</a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            let favoritesList = document.getElementById('favorites-list');
+            
+            if (favorites.length > 0) {
+                favorites.forEach(function(movie) {
+                    let li = document.createElement('li');
+                    li.textContent = movie;
+                    favoritesList.appendChild(li);
+                });
+            } else {
+                favoritesList.textContent = 'No favorites added yet.';
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Sen:wght@400;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <title>Movie18</title>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="navbar-container">
+            <div class="logo-container">
+                <h1 class="logo">Movie18</h1>
+            </div>
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Search for a movie...">
+                <button id="search-btn">
+                    <i class="fa fa-search"></i> 
+                </button>
+            </div>
+            
+            <div class="menu-container">
+                <ul class="menu-list">
+                    <li class="menu-list-item active">Home</li>
+                    <li class="menu-list-item">Movies</li>
+                    <li class="menu-list-item">Series</li>
+                    <li class="menu-list-item">Popular</li>
+                    <li class="menu-list-item">Trends</li>
+                </ul>
+            </div>
+            <div class="profile-container">
+                <img class="profile-picture" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png" alt="">
+                <div class="profile-text-container">
+                    <span class="profile-text">Profile</span>
+                    <i class="fas fa-caret-down"></i>
+                </div>
+                <div class="toggle">
+                    <i class="fas fa-moon toggle-icon"></i>
+                    <i class="fas fa-sun toggle-icon"></i>
+                    <div class="toggle-ball"></div>
+                </div>
+            </div>
+            <!-- Sidebar Toggle Button -->
+            <div class="toggle-sidebar-container">
+                <button id="toggle-button">☰</button>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar hidden" id="sidebar">
+        <i class="left-menu-icon fas fa-search"></i>
+        <i class="left-menu-icon fas fa-home"></i>
+        <i class="left-menu-icon fas fa-users"></i>
+        <i class="left-menu-icon fas fa-bookmark"></i>
+        <i class="left-menu-icon fas fa-tv"></i>
+        <i class="left-menu-icon fas fa-hourglass-start"></i>
+        <i class="left-menu-icon fas fa-shopping-cart"></i>
+    </div>
+    
+    
+            <div class="container">
+              <div class="content-container">
+                  <div class="featured-content"
+                      style="background: linear-gradient(to bottom, rgba(0,0,0,0), #151515), url('img/f-1.jpg');">
+                      <h1>Top Rated</h1>
+                      <img class="featured-title" src="https://cdn.123telugu.com/content/wp-content/uploads/2023/12/Salaar-2.jpg" alt="">
+                      <p class="featured-desc">The fate of a violently contested kingdom hangs on the fraught bond between two friends-turned-foes in this saga of power.</p>
+                      <button class="featured-button" onclick="redirectToMoviePage('salaar.html')">Watch</button>
+                  </div>
+          
+                  <div class="movie-list-container">
+                      <h1 class="movie-list-title">NEW RELEASES</h1>
+                      <div class="movie-list-wrapper">
+                          <div class="movie-list">
+                            <div class="movie-list-item" data-movie-name="kalki" data-movie-page="kalki.html"></div>
+                              <div class="movie-list-item">
+                                  <img class="movie-list-item-img" src="img/kalki-1.jpg" alt="">
+                                  <span class="movie-list-item-title">Kalki 2898 AD</span>
+                                  <p class="movie-list-item-desc">A modern avatar of the Hindu god Vishnu, is said to have descended on Earth to protect the world from evil forces.</p>
+                                  <button class="movie-list-item-button" onclick="redirectToMoviePage('kalki.html')">Watch</button>
+                              </div>
+                              
+                              <div class="movie-list-item" data-movie-name="rayan" data-movie-page="rayan.html">
+                                <div class="movie-list-item">
+            
+                                              <img class="movie-list-item-img" src="https://www.greatandhra.com/newphotos10/raayan31721981832.jpg" alt="">
+                                              <span class="movie-list-item-title">Raayan</span>
+                                              <p class="movie-list-item-desc">After his family is killed, a young man trains to avenge their murders. Seeking those responsible.</p>
+                                              <button class="movie-list-item-button" onclick="redirectToMoviePage('rayan.html')">Watch</button>
+                                          </div>
+                      
+                            </div>
+                              <div class="movie-list-item">
+                                  <img class="movie-list-item-img" src="img/Saripodhaa-Sanivaaram-Movie-Review.jpg" alt="">
+                                  <span class="movie-list-item-title">Saripodhaa Sanivaaram</span>
+                                  <p class="movie-list-item-desc">In order to defend the innocent from a corrupt and brutal cop, a vigilante hero must work around his own self-imposed code of honor.</p>
+                                  <button class="movie-list-item-button" onclick="redirectToMoviePage('sari.html')">Watch</button>
+                              </div>
+          
+                              <div class="movie-list-item">
+                                  <img class="movie-list-item-img" src="img/weapon.jpg" alt="">
+                                  <span class="movie-list-item-title">Weapon</span>
+                                  <p class="movie-list-item-desc">Weapon is a 2024 Indian superhero film directed by Guhan Senniappan and produced by M. S. Manzoor under Million Studio.</p>
+                                  <button class="movie-list-item-button" onclick="redirectToMoviePage('weap.html')">Watch</button>
+                              </div>
+          
+                              <div class="movie-list-item">
+                                  <img class="movie-list-item-img" src="img/Paarijatha Parvam.jpg" alt="">
+                                  <span class="movie-list-item-title">Paarijatha Parvam</span>
+                                  <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique accusantium.</p>
+                                  <button class="movie-list-item-button" onclick="redirectToMoviePage('paarijatha.html')">Watch</button>
+                              </div>
+          
+                              <div class="movie-list-item">
+                                  <img class="movie-list-item-img" src="img/6.jpg" alt="">
+                                  <span class="movie-list-item-title">Her</span>
+                                  <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique accusantium.</p>
+                                  <button class="movie-list-item-button" onclick="redirectToMoviePage('her.html')">Watch</button>
+                              </div>
+          
+                              <div class="movie-list-item">
+                                  <img class="movie-list-item-img" src="img/7.jpg" alt="">
+                                  <span class="movie-list-item-title">Her</span>
+                                  <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At hic fugit similique accusantium.</p>
+                                  <button class="movie-list-item-button" onclick="redirectToMoviePage('her2.html')">Watch</button>
+                              </div>
+                          </div>
+                          <i class="fas fa-chevron-right arrow"></i>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="container">
+            <div class="content-container">
+            <div class="movie-list-container">
+              <h1 class="movie-list-title">Prabhas Movies</h1>
+              <div class="movie-list-wrapper">
+                  <div class="movie-list">
+                     
+                      <div class="movie-list-item">
+                          <img class="movie-list-item-img" src="https://cdn.123telugu.com/content/wp-content/uploads/2023/12/Salaar-2.jpg" alt="">
+                          <span class="movie-list-item-title">Salaar</span>
+                          <p class="movie-list-item-desc">The fate of a violently contested kingdom hangs on the fraught bond between two friends-turned-foes in this saga of power.</p>
+                          <button class="movie-list-item-button" onclick="redirectToMoviePage('salaar.html')">Watch</button>
+                      </div>
+                      <div class="movie-list-item">
+                          <img class="movie-list-item-img" src="img/radhe.jpg" alt="">
+                          <span class="movie-list-item-title">Radhe Shyam</span>
+                          <p class="movie-list-item-desc">In 1970s Europe, a world-renowned palmist named Vikramaditya finds love when he meets Prerana, a doctor.</p>
+                          <button class="movie-list-item-button" onclick="redirectToMoviePage('radhe.html')">Watch</button>
+                      </div>
+                      <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="img/bahu1.jpg" alt="">
+                        <span class="movie-list-item-title">Baahubali:The Beginning</span>
+                        <p class="movie-list-item-desc">In the kingdom of Mahishmati, Shivudu falls in love with a young warrior woman.</p>
+                        <button class="movie-list-item-button" onclick="redirectToMoviePage('bahubail.html')">Watch</button>
+                    </div>
+                    <div class="movie-list-item">
+                      <img class="movie-list-item-img" src="img/saaho-imdb.jpg" alt="">
+                      <span class="movie-list-item-title">Saaho</span>
+                      <p class="movie-list-item-desc">An undercover agent and his partner go after a thief who has stolen 2,000 crore rupees</p>
+                      <button class="movie-list-item-button" onclick="redirectToMoviePage('saaho.html')">Watch</button>
+                  </div>
+                  
+                      <div class="movie-list-item">
+                        <img class="movie-list-item-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTfulEeFIAX0o70y8YqYeovS5hL9UjR-CwNg&usqp=CAU" alt="">
+                        <span class="movie-list-item-title">Kalki 2898 AD</span>
+                        <p class="movie-list-item-desc">A modern avatar of the Hindu god Vishnu, is said to have descended on Earth to protect the world from evil forces.</p>
+                        <button class="movie-list-item-button">Watch</button>
+                    </div>
+                      
+                      <div class="movie-list-item">
+                          <img class="movie-list-item-img" src="img/5.jpg" alt="">
+                          <span class="movie-list-item-title">Her</span>
+                          <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                              hic fugit similique accusantium.</p>
+                              <button class="movie-list-item-button" onclick="redirectToMoviePage('kalki.html')">Watch</button>
+                      </div>
+                      <div class="movie-list-item">
+                          <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                          <span class="movie-list-item-title">Her</span>
+                          <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                              hic fugit similique accusantium.</p>
+                          <button class="movie-list-item-button">Watch</button>
+                      </div>
+                  </div>
+                  <i class="fas fa-chevron-right arrow"></i>
+              </div>
+          </div>
+            <div class="movie-list-container">
+                <h1 class="movie-list-title">Ramcharan movies</h1>
+                <div class="movie-list-wrapper">
+                    <div class="movie-list">
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/acharya-movie.jpg" alt="">
+                            <span class="movie-list-item-title">Acharya</span>
+                            <p class="movie-list-item-desc">When Dharmasthali, a village, is ruled by some of the most powerful but corrupt leaders.</p>
+                            <button class="movie-list-item-button" onclick="redirectToMoviePage('ach.html')">Watch</button>
+                            
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/rrr.jpg" alt="">
+                            <span class="movie-list-item-title">RRR</span>
+                            <p class="movie-list-item-desc">RRR is Indian Telugu-language epic period action drama film directed by Rajamouli, who co-wrote the film with V. Vijayendra Prasad.</p>
+                            <button class="movie-list-item-button" onclick="redirectToMoviePage('rrr.html')">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Ranga.jpg" alt="">
+                            <span class="movie-list-item-title">Rangasthalam</span>
+                            <p class="movie-list-item-desc">A young man with impaired hearing and his elder brother decide to oppose the tyrannical rule of Phanindra</p>
+                            <button class="movie-list-item-button" onclick="redirectToMoviePage('ranga.html')">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/Dhruva.jpg" alt="">
+                            <span class="movie-list-item-title">Dhruva</span>
+                            <p class="movie-list-item-desc">An IPS officer discovers a strong network of organised crime. </p>
+                            <button class="movie-list-item-button" onclick="redirectToMoviePage('dhruva.html')">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/maga.jpg" alt="">
+                            <span class="movie-list-item-title">Magadheera</span>
+                            <p class="movie-list-item-desc">When Harsha sets out to his clear his name, he recalls his previous life from 400 years ago and his connection to them.</p>
+                            <button class="movie-list-item-button" onclick="redirectToMoviePage('maga.html')">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                        <div class="movie-list-item">
+                            <img class="movie-list-item-img" src="img/1.jpg" alt="">
+                            <span class="movie-list-item-title">Her</span>
+                            <p class="movie-list-item-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. At
+                                hic fugit similique accusantium.</p>
+                            <button class="movie-list-item-button">Watch</button>
+                        </div>
+                    </div>
+                    <i class="fas fa-chevron-right arrow"></i>
+                </div>
+            </div>
+            <a href="favorites.html">Go to Favorites Page</a>
+
+    <script>
+        function addToFavorites(movieName) {
+            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+            if (!favorites.includes(movieName)) {
+                favorites.push(movieName);
+                localStorage.setItem('favorites', JSON.stringify(favorites));
+            }
+            window.location.href = 'favorites.html';
+        }
+    </script>
+        
+    <script src="app.js"></script>
+</body>
+
+<style>
+   
+</style>
+
+<script>
+    const arrows = document.querySelectorAll(".arrow");
+const movieLists = document.querySelectorAll(".movie-list");
+
+arrows.forEach((arrow, i) => {
+  const itemNumber = movieLists[i].querySelectorAll("img").length;
+  let clickCounter = 0;
+  arrow.addEventListener("click", () => {
+    const ratio = Math.floor(window.innerWidth / 270);
+    clickCounter++;
+    if (itemNumber - (4 + clickCounter) + (4 - ratio) >= 0) {
+      movieLists[i].style.transform = `translateX(${
+        movieLists[i].computedStyleMap().get("transform")[0].x.value - 300
+      }px)`;
+    } else {
+      movieLists[i].style.transform = "translateX(0)";
+      clickCounter = 0;
+    }
+  });
+
+  console.log(Math.floor(window.innerWidth / 270));
+});
+
+
+const ball = document.querySelector(".toggle-ball");
+const items = document.querySelectorAll(
+  ".container,.movie-list-title,.navbar-container,.sidebar,.left-menu-icon,.toggle"
+);
+
+ball.addEventListener("click", () => {
+  items.forEach((item) => {
+    item.classList.toggle("active");
+  });
+  ball.classList.toggle("active");
+});
+</script>
+
+ 
+<script>
+  function redirectToMoviePage(url) {
+      window.location.href = url;
+  }
+</script>
+<script>
+   
+
+const toggleButton = document.getElementById('toggle-button');
+const sidebar = document.getElementById('sidebar');
+
+toggleButton.addEventListener('click', function() {
+    
+    sidebar.classList.toggle('hidden');
+});
+
+</script>
+<script>
+document.getElementById('search-btn').addEventListener('click', searchMovie);
+document.getElementById('search-input').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') { 
+        searchMovie();
+    }
+});
+
+function searchMovie() {
+    var searchInput = document.getElementById('search-input').value.toLowerCase();
+
+    var moviePages = {
+        'kalki': 'kalki.html',
+        'rayan':'rayan.html',
+        'bahubali': 'bahubali.html',
+        'magadheera' :'magadheera.html',
+        'saaho':'saaho.html',
+        'radheshyam':'radheshyam',
+        'rangasthalam':'rangasthalam',
+        'dhruva': 'dhruva.html',
+        'rrr':'rrr.html',
+        'acharya':'acharya.html',
+        'weapon':'weapon.html',
+        'salaar':'salaar',
+        'saripodhaa sanivaaram ':'saripodhaa sanivaaram ',
+        'paarijatha':'paarijatha'
+    };
+
+    if (moviePages[searchInput]) {
+        window.location.href = moviePages[searchInput];
+    } else {
+        alert("Movie not found!"); 
+    }
+}
+
+</script>
+    </body>
+</html>

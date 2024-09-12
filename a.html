@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search</title>
+    <!-- Include Font Awesome for the search icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrQkTyW+H6h5kRgDQe1BzEJvKnT5VQZP6S/r5wXG8eE+u2tYg+B0oH1GvzvBwtEsh0n3eXgbyKxqDyQZfw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Add your CSS styling here */
+        .search-container {
+            margin: 20px;
+        }
+
+        #search-input {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+
+        #search-btn {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .movie-list-container {
+            margin: 20px;
+        }
+
+        .movie-list-item {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .movie-list-item-img {
+            width: 100px;
+            height: auto;
+            margin-right: 20px;
+        }
+
+        .movie-list-item-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .movie-list-item-desc {
+            margin: 10px 0;
+        }
+
+        .movie-list-item-button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .movie-list-item-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for a movie...">
+        <button id="search-btn">
+            <i class="fa fa-search"></i> 
+        </button>
+    </div>
+
+    <div class="movie-list-container">
+        <h1 class="movie-list-title">NEW RELEASES</h1>
+        <div class="movie-list-wrapper">
+            <div class="movie-list">
+                <div class="movie-list-item" data-movie-name="kalki" data-movie-page="kalki.html">
+                    <img class="movie-list-item-img" src="img/kalki-1.jpg" alt="Kalki 2898 AD">
+                    <div>
+                        <span class="movie-list-item-title">Kalki 2898 AD</span>
+                        <p class="movie-list-item-desc">A modern avatar of the Hindu god Vishnu, is said to have descended on Earth to protect the world from evil forces.</p>
+                        <button class="movie-list-item-button" onclick="redirectToMoviePage('kalki.html')">Watch</button>
+                    </div>
+                </div>
+                <div class="movie-list-item" data-movie-name="rayan" data-movie-page="rayan.html">
+                    <div class="movie-list-item">
+
+                                  <img class="movie-list-item-img" src="https://www.greatandhra.com/newphotos10/raayan31721981832.jpg" alt="">
+                                  <span class="movie-list-item-title">Raayan</span>
+                                  <p class="movie-list-item-desc">After his family is killed, a young man trains to avenge their murders. Seeking those responsible.</p>
+                                  <button class="movie-list-item-button" onclick="redirectToMoviePage('rayan.html')">Watch</button>
+                              </div>
+          
+                </div>
+                <!-- Add more movie items here with appropriate data attributes -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // Function to redirect to a specific movie page
+    function redirectToMoviePage(page) {
+        window.location.href = page;
+    }
+
+    // Function to handle the search functionality
+    function handleSearch() {
+        // Get the search input value and trim any whitespace
+        const query = document.getElementById('search-input').value.trim().toLowerCase();
+
+        // Check if the search input is empty
+        if (query === '') {
+            alert('Please enter a movie name to search.');
+            return;
+        }
+
+        // Get all movie items
+        const movies = document.querySelectorAll('.movie-list-item');
+
+        // Initialize a flag to check if a movie is found
+        let movieFound = false;
+
+        // Iterate through each movie to find a match
+        movies.forEach(movie => {
+            // Get the movie name from the data attribute
+            const movieName = movie.getAttribute('data-movie-name').toLowerCase();
+
+            // Check if the search query matches the movie name
+            if (movieName === query) {
+                movieFound = true;
+                const moviePage = movie.getAttribute('data-movie-page');
+                redirectToMoviePage(moviePage);
+            }
+        });
+
+        // If no movie is found, alert the user
+        if (!movieFound) {
+            alert('Movie not found. Please check the spelling or try another movie.');
+        }
+    }
+
+    // Add an event listener to the search button
+    document.getElementById('search-btn').addEventListener('click', handleSearch);
+
+    // Optional: Allow pressing 'Enter' to trigger the search
+    document.getElementById('search-input').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            handleSearch();
+        }
+    });
+
+    
+    </script>
+</body>
+</html>

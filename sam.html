@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="search-results">
+        <!-- Search results will be populated here -->
+      </div>
+      
+      <div id="movie-details" style="display: none;">
+        <img id="movie-poster" src="" alt="Movie Poster" />
+        <h2 id="movie-title"></h2>
+        <p id="movie-release-date"></p>
+        <p id="movie-synopsis"></p>
+        <p id="movie-genre"></p>
+        <p id="movie-cast"></p>
+        <p id="movie-ratings"></p>
+      </div>
+      <script>
+        // Sample movie data for demonstration
+const movies = [
+  {
+    title: "Movie Title 1",
+    releaseDate: "2024-01-01",
+    synopsis: "This is the synopsis of Movie Title 1.",
+    genre: "Action",
+    cast: "Actor 1, Actor 2",
+    ratings: "8.5/10",
+    poster: "url_to_movie_poster_1.jpg"
+  },
+  {
+    title: "Movie Title 2",
+    releaseDate: "2023-12-15",
+    synopsis: "This is the synopsis of Movie Title 2.",
+    genre: "Comedy",
+    cast: "Actor A, Actor B",
+    ratings: "7.9/10",
+    poster: "url_to_movie_poster_2.jpg"
+  }
+];
+
+function displaySearchResults() {
+  const searchResults = document.getElementById('search-results');
+  searchResults.innerHTML = '';
+
+  movies.forEach((movie, index) => {
+    const movieItem = document.createElement('div');
+    movieItem.innerText = movie.title;
+    movieItem.className = 'movie-item';
+    movieItem.onclick = () => displayMovieDetails(index);
+    searchResults.appendChild(movieItem);
+  });
+}
+
+function displayMovieDetails(index) {
+  const movie = movies[index];
+
+  document.getElementById('movie-poster').src = movie.poster;
+  document.getElementById('movie-title').innerText = movie.title;
+  document.getElementById('movie-release-date').innerText = `Release Date: ${movie.releaseDate}`;
+  document.getElementById('movie-synopsis').innerText = movie.synopsis;
+  document.getElementById('movie-genre').innerText = `Genre: ${movie.genre}`;
+  document.getElementById('movie-cast').innerText = `Cast: ${movie.cast}`;
+  document.getElementById('movie-ratings').innerText = `Ratings: ${movie.ratings}`;
+
+  document.getElementById('movie-details').style.display = 'block';
+}
+
+displaySearchResults();
+
+      </script>
+      <script>
+        function fetchMovieDetails(movieId) {
+  fetch(`https://api.example.com/movies/${movieId}`)
+    .then(response => response.json())
+    .then(data => {
+      displayMovieDetails(data);
+    });
+}
+
+      </script>
+      <script>
+        function searchMovies(query) {
+  const filteredMovies = movies.filter(movie => movie.title.toLowerCase().includes(query.toLowerCase()));
+  displaySearchResults(filteredMovies);
+}
+
+// Call searchMovies with the user's input from a search box
+
+      </script>
+      <style>
+        #search-results {
+  margin: 20px 0;
+}
+
+.movie-item {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.movie-item:hover {
+  background-color: #f0f0f0;
+}
+
+#movie-details {
+  padding: 20px;
+  border: 1px solid #ccc;
+  margin-top: 20px;
+}
+
+#movie-poster {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+      </style>
+</body>
+</html>
